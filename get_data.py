@@ -1,9 +1,5 @@
 import pandas as pd
 
-
-#https://fbref.com/en/squads/a0435291/2022-2023/Granada-Stats
-#https://fbref.com/en/squads/0049d422/Las-Palmas-Stats
-
 url_granada_2da = "https://fbref.com/en/squads/a0435291/2022-2023/Granada-Stats"
 url_granada_1ra = "https://fbref.com/en/squads/a0435291/2023-2024/Granada-Stats"
 url_alaves_2da = "https://fbref.com/en/squads/8d6fd021/2022-2023/Alaves-Stats"
