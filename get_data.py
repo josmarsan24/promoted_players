@@ -35,12 +35,12 @@ def get_team_data(url,div):
     #read standard df
     try:
         response = requests.get(url,headers=headers)
-        retry = 5
-        while response.status_code == 429 and retry > 0:
+        retry = 3
+        while response.status_code !=200 and retry > 0:
             retry = retry - 1
-            print('retry')
-            time.sleep(5)
+            time.sleep(3)
             response = requests.get(url,headers=headers)
+        print(str(response.status_code))
         df = pd.read_html(response.text, attrs={"id":ID_TABLE_STANDARD})[0]
     except:
         print('Cant retrieve data')
@@ -50,18 +50,7 @@ def get_team_data(url,div):
     df['xA']=0
     df['OffAct']=0
     #read shoots
-    try:
-        response = requests.get(url,headers=headers)
-        retry = 5
-        while response.status_code == 429 and retry > 0:
-            print('retry')
-            retry = retry - 1
-            time.sleep(5)
-            response = requests.get(url,headers=headers)
-        df_aux = pd.read_html(response.text, attrs={"id":ID_TABLE_SHOOTING})[0]
-    except:
-        print('Cant retrieve data')
-        sys.exit(1)
+    df_aux = pd.read_html(response.text, attrs={"id":ID_TABLE_SHOOTING})[0]
     df_aux = df_aux[[('Unnamed: 0_level_0', 'Player'),('Standard', 'Sh')]]
     df_aux.columns = ['Name','Sh']
     df['OffAct']=df_aux['Sh']
