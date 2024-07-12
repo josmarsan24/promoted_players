@@ -71,12 +71,12 @@ def get_team_data(url,div):
     df_aux.columns = ['Name','Crs']
     df['OffAct']=df['OffAct']+df_aux['Crs']
     #read dribbles
-    df_aux = pd.read_html(response.text, attrs={"id":ID_TABLE_PASSING_TYPES})[0]
+    df_aux = pd.read_html(response.text, attrs={"id":ID_TABLE_DRIBBLING})[0]
     df_aux = df_aux[[('Unnamed: 0_level_0', 'Player'),('Take-Ons', 'Succ')]]
     df_aux.columns = ['Name','Drib']
     df['OffAct']=df['OffAct']+df_aux['Drib']
     #read xA
-    df_aux = pd.read_html(response.text, attrs={"id":ID_TABLE_PASSING_TYPES})[0]
+    df_aux = pd.read_html(response.text, attrs={"id":ID_TABLE_PASSING})[0]
     df_aux = df_aux[[('Unnamed: 0_level_0', 'Player'),('Expected', 'xA')]]
     df_aux.columns = ['Name','xA']
     df['xA']=df_aux['xA']
