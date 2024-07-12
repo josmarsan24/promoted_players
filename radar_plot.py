@@ -34,10 +34,10 @@ def plot_radar(df, cols, index1, index2):
     fig, ax = plt.subplots(figsize=(8, 8), subplot_kw=dict(polar=True))
 
     # Dibujar una línea para cada conjunto de valores y rellenar el área
-    ax.plot(angles, values1, linewidth=2, linestyle='solid', label=f'Index {index1}')
+    ax.plot(angles, values1, linewidth=2, linestyle='solid', label=name_1)
     ax.fill(angles, values1, alpha=0.25)
 
-    ax.plot(angles, values2, linewidth=2, linestyle='solid', label=f'Index {index2}')
+    ax.plot(angles, values2, linewidth=2, linestyle='solid', label=name_2)
     ax.fill(angles, values2, alpha=0.25)
 
     # Añadir etiquetas para cada ángulo
@@ -47,7 +47,7 @@ def plot_radar(df, cols, index1, index2):
     plt.legend(loc='upper right', bbox_to_anchor=(0.1, 0.1))
 
     # Título del gráfico
-    plt.title(f'Comparación de {name_1} y {name_2} esperado en 1ra división', size=20, color='blue', y=1.1)
+    plt.title(f'Comparación de {name_1} y {name_2}', size=20, color='blue', y=1.1)
 
     # Mostrar el gráfico
     plt.show()
