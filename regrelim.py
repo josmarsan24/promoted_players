@@ -45,11 +45,15 @@ def regrelim(df, col1, col2):
     regr.fit(x_train, y_train)
     y_pred = regr.predict(x_train)
 
-    return regr, y_pred
+    r2 = regr.score(x_train, y_train)
+    slope = regr.coef_[0]
+    intercept = regr.intercept_
+
+    return regr, y_pred, r2, slope, intercept
 
 #plot regrelim
 def plot_regression(df, col1, col2,val0,val1):
-    regr, y_pred = regrelim(df, col1, col2)
+    regr, y_pred, r2, slope, intercept = regrelim(df, col1, col2)
     
     plt.figure(figsize=(10, 6))
     plt.scatter(df[col2], df[col1], color='blue', label='Resto jugadores')
@@ -69,7 +73,8 @@ def plot_regression(df, col1, col2,val0,val1):
     col2_esp = col_name_esp(col2)
     plt.xlabel(col2_esp)
     plt.ylabel(col1_esp)
-    plt.title(f'Regresión Lineal entre {col1_esp} y {col2_esp}')
+    plt.suptitle(f'Regresión Lineal entre {col1_esp} y {col2_esp}',fontsize=16)
+    plt.title(f'$R^2 = {r2:.2f}$ ' + f'$y = {slope:.2f}x + {intercept:.2f}$',fontsize=12)
     plt.legend()
     plt.grid(True)
     plt.show()
