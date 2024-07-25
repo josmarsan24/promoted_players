@@ -12,7 +12,10 @@ After getting all the stats i needed i made a linear regression for each stat, t
 There are four python classes in this project:
 - get_data.py: This is the class that scraps the FBref website and writes the stats in the file promoted_players.csv
 - regrelim.py: Calculates the linear regression of each stats and plots it with the prediction for the players, example:
+  ![regre](/images/xGregre.png)  
 - radar_plot.py: Shows a radar plot comparing the stats of Peque and Iker Losada in the 2nd division, this is the result:
+-  ![radar](/images/radar.png)  
 - bar_plot.py: Shows a bar plot for Peque and Iker Losada comparing their stats in the 2nd division and the predicted ones in the 1st division, example:
+-  ![bar](/images/LosadaBar.png)  
 ## More info
 Here is a link for a longer document in spanish explaining how i developed the project: https://drive.google.com/file/d/1bk0vC9yPAAFy4EsD34WSgXEu2LUqFUqc/view?usp=drive_link
