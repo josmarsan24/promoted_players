@@ -7,7 +7,7 @@ This project was made after the signings of Iker Losada and Peque for Real Betis
 - Offensive Actions (OffAct)
 
 Then normalized the stats by 90 and discarded the players with less than 360 minutes (4 full matches).
-After getting all the stats i needed i made a linear regression for each stat, then used a linear regression to predict the stats that Iker Losada and Peque would get in the first division.
+After getting all the stats i needed, i made a linear regression for each stat, then used it to predict the stats that Iker Losada and Peque would get in the first division.
 ## How it works
 There are four python classes in this project:
 - get_data.py: This is the class that scraps the FBref website and writes the stats in the file promoted_players.csv
